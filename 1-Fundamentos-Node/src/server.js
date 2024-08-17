@@ -1,18 +1,5 @@
-// -- padrao antigo de importação --
-//const http = require('http')
-
-// -- padrão novo --
 import http from 'node:http'
-/*METODOS HTTP
 
-GET => Buscar um recurso do back-end
-POST => Criar um recurso do back-end
-PUT => Atualizar um recurso do back-end
-PATCH => Atualizar uma informação especifica de um recurso do back-end
-DELETE => Deletar um recurso do back-end
-
-Cabeçados (Requisição/resposta) => Metadados
-*/
 const users = []
 
 const server = http.createServer((req, res) => {
@@ -31,7 +18,7 @@ const server = http.createServer((req, res) => {
       email: 'johndoe@example.com'
     })
 
-    return res.writeHead(201).end()
+    return res.writeHead(201).end('Criação de usuario')
   }
 
   return res.writeHead(404).end()
