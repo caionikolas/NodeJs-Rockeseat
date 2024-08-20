@@ -1,0 +1,18 @@
+###
+POST http://localhost:3333/transactions
+Content-Type: application/json
+
+{
+  "title": "Freelancer",
+  "amount": 1000,
+  "type": "debit"
+}
+
+###
+GET http://localhost:3333/transactions
+
+###
+GET http://localhost:3333/transactions/c5516b50-79a7-4463-8f8f-0965abd71913
+
+###
+GET http://localhost:3333/transactions/summary
