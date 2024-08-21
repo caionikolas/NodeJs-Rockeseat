@@ -6,6 +6,21 @@ import { checkSessionIdExists } from '../middlewares/check-session-id-exists'
 
 // Cookies <-> Formas da gente manter contexto entre as requisições
 
+/*
+  --  Testes --
+
+  - Unitários: unidade da sua aplicação
+  - Integração: comunicação entre duas ou mais unidades
+  - E2E - Ponta a ponta: simulam um usuário operando na nossa aplicação
+
+  Pirâmide de testes: E2E (não dependem de nenhuma tecnologia, 
+    não dependem de arquitetura ) 
+
+         E2E
+      Integração
+  Unitários-Unitários          
+*/
+
 export async function transactionsRoutes(app: FastifyInstance) {
   app.get(
     '/',
