@@ -13,7 +13,7 @@ model User {
   email         String    @unique
   password_hash String
   created_at    DateTime  @default(now())
-  checkIns      CheckIn[]
+  check_ins     CheckIn[]
 
   @@map("users")
 }
@@ -22,11 +22,11 @@ model CheckIn {
   id           String    @id @default(uuid())
   created_at   DateTime  @default(now())
   validated_at DateTime?
-  userId       String
-  gymId        String
+  user_id      String
+  gym_id       String
 
-  user User @relation(fields: [userId], references: [id])
-  gym  Gym  @relation(fields: [gymId], references: [id])
+  user User @relation(fields: [user_id], references: [id])
+  gym  Gym  @relation(fields: [gym_id], references: [id])
 
   @@map("check_ins")
 }
@@ -38,7 +38,7 @@ model Gym {
   phone       String?
   latitude    Decimal
   longitude   Decimal
-  checkIns    CheckIn[]
+  check_ins   CheckIn[]
 
   @@map("gyms")
 }
